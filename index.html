@@ -52,6 +52,7 @@
     h1 {
       font-size: 3rem;
       margin-bottom: 1rem;
+      text-shadow: 0 0 10px rgba(30, 144, 255, 0.7);
     }
     p {
       font-size: 1.2rem;
@@ -66,10 +67,13 @@
       border-radius: 10px;
       font-size: 1rem;
       cursor: pointer;
-      transition: background 0.3s;
+      transition: all 0.3s;
+      box-shadow: 0 0 15px rgba(30, 144, 255, 0.5);
     }
     button:hover, input[type="submit"]:hover {
       background-color: #00bfff;
+      transform: translateY(-2px);
+      box-shadow: 0 0 20px rgba(0, 191, 255, 0.8);
     }
     .nav-buttons {
       position: fixed;
@@ -85,6 +89,12 @@
       background-color: rgba(0, 0, 0, 0.6);
       padding: 15px;
       pointer-events: auto;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     form {
       display: flex;
@@ -98,14 +108,15 @@
     label {
       font-size: 1rem;
       margin-top: 10px;
+      color: #1e90ff;
     }
-    select {
+    select, input[type="email"] {
       width: 100%;
       padding: 10px;
       border-radius: 5px;
-      background-color: #333;
+      background-color: rgba(30, 144, 255, 0.2);
       color: white;
-      border: none;
+      border: 1px solid #1e90ff;
     }
     .footer {
       margin-top: 30px;
@@ -131,10 +142,12 @@
       background-color: rgba(255, 255, 255, 0.5);
       margin: 0 5px;
       cursor: pointer;
-      transition: background-color 0.3s;
+      transition: all 0.3s;
     }
     .dot.active {
       background-color: #1e90ff;
+      transform: scale(1.3);
+      box-shadow: 0 0 10px #1e90ff;
     }
     .coach-profile {
       background-color: rgba(30, 144, 255, 0.1);
@@ -142,6 +155,8 @@
       border-radius: 10px;
       margin: 20px 0;
       text-align: center;
+      border: 1px solid rgba(30, 144, 255, 0.3);
+      backdrop-filter: blur(5px);
     }
     .coach-profile img {
       width: 150px;
@@ -150,11 +165,7 @@
       object-fit: cover;
       margin-bottom: 15px;
       border: 3px solid #1e90ff;
-    }
-    .coach-profile h3 {
-      color: #1e90ff;
-      font-size: 1.5rem;
-      margin-bottom: 10px;
+      box-shadow: 0 0 20px rgba(30, 144, 255, 0.5);
     }
     .coach-specialty {
       color: #00bfff;
@@ -164,6 +175,7 @@
     .coach-games {
       font-style: italic;
       margin-bottom: 10px;
+      color: #1e90ff;
     }
     .contact-info {
       background-color: rgba(30, 144, 255, 0.2);
@@ -172,6 +184,8 @@
       margin-top: 20px;
       display: inline-block;
       font-size: 1.1rem;
+      border: 1px solid rgba(30, 144, 255, 0.4);
+      backdrop-filter: blur(5px);
     }
     .copy-btn {
       background-color: #333;
@@ -182,9 +196,11 @@
       margin-left: 10px;
       cursor: pointer;
       font-size: 0.8rem;
+      transition: all 0.3s;
     }
     .copy-btn:hover {
       background-color: #444;
+      transform: translateY(-2px);
     }
     .social-buttons {
       display: flex;
@@ -221,16 +237,33 @@
     .success {
       background-color: rgba(0, 255, 0, 0.2);
       color: #0f0;
+      border: 1px solid #0f0;
     }
     .error {
       background-color: rgba(255, 0, 0, 0.2);
       color: #f00;
+      border: 1px solid #f00;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    ul li {
+      padding: 8px 0;
+      position: relative;
+      padding-left: 25px;
+    }
+    ul li:before {
+      content: "→";
+      color: #1e90ff;
+      position: absolute;
+      left: 0;
     }
   </style>
 </head>
 <body>
-  <!-- Welcome Slide -->
-  <div class="slide active" style="background-image: url('https://cdn2.unrealengine.com/fortnite-og-social-1920x1080-6d0c9f08f6f7.jpg')">
+  <!-- Welcome Slide - Fortnite themed -->
+  <div class="slide active" style="background-image: url('https://cdn2.unrealengine.com/fortnite-chapter-5-season-2-key-art-3840x2160-aa063d7c8b0a.jpg'); background-position: top center;">
     <div class="overlay"></div>
     <div class="content">
       <h1>Welcome to 200IQ Coaching</h1>
@@ -239,8 +272,8 @@
     </div>
   </div>
 
-  <!-- Why 200IQ Coaching Slide -->
-  <div class="slide" style="background-image: url('https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt74bdb32fe9e42325/62a23245e03c80112ceee6a7/062222_Valorant_Episode5_Act1_Banner.jpg')">
+  <!-- Why 200IQ Coaching Slide - Valorant themed -->
+  <div class="slide" style="background-image: url('https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt962a6518612d78db/65f33f0d8b1a7263b1341b5b/EP7_ACT2_PlayVALORANT_ContentStackThumbnail_1920x1080_VAL.jpg'); background-position: center;">
     <div class="overlay"></div>
     <div class="content">
       <h1>Why 200IQ Coaching?</h1>
@@ -251,8 +284,8 @@
     </div>
   </div>
 
-  <!-- Our Coaches Slide -->
-  <div class="slide" style="background-image: url('https://cdn1.dotesports.com/wp-content/uploads/2021/04/02103044/valorant-jett-lead-image.jpg')">
+  <!-- Our Coaches Slide - Jett themed -->
+  <div class="slide" style="background-image: url('https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt29d7e7cc9d2a80f6/5eb26f54402b8b4d13a56656/agent-background-generic.jpg'); background-position: center;">
     <div class="overlay"></div>
     <div class="content">
       <h1>Our Coaches</h1>
@@ -280,14 +313,14 @@
     </div>
   </div>
 
-  <!-- What We Focus On Slide -->
-  <div class="slide" style="background-image: url('https://cdn2.unrealengine.com/Fortnite_Battle_Royale_Chapter4_Season1_KeyArt_1920x1080-1920x1080-101d6275b8b7.jpg')">
+  <!-- What We Focus On Slide - Fortnite themed -->
+  <div class="slide" style="background-image: url('https://cdn2.unrealengine.com/egs-fortnite-chapter5season1-battlepass-carousel-desktop-1920x1080-1920x1080-3b5c9a5e1c6d.jpg'); background-position: center;">
     <div class="overlay"></div>
     <div class="content">
       <h1>What We Focus On</h1>
       
       <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 30px;">
-        <div style="flex: 1; min-width: 250px; background-color: rgba(30, 144, 255, 0.1); padding: 20px; border-radius: 10px;">
+        <div style="flex: 1; min-width: 250px; background-color: rgba(30, 144, 255, 0.1); padding: 20px; border-radius: 10px; border: 1px solid rgba(30, 144, 255, 0.3); backdrop-filter: blur(5px);">
           <h3 style="color: #1e90ff;">Fortnite</h3>
           <ul style="text-align: left; margin-top: 15px;">
             <li>Advanced Building Techniques</li>
@@ -298,8 +331,8 @@
           </ul>
         </div>
         
-        <div style="flex: 1; min-width: 250px; background-color: rgba(30, 144, 255, 0.1); padding: 20px; border-radius: 10px;">
-          <h3 style="color: #1e90ff;">Valorant</h3>
+        <div style="flex: 1; min-width: 250px; background-color: rgba(255, 70, 85, 0.1); padding: 20px; border-radius: 10px; border: 1px solid rgba(255, 70, 85, 0.3); backdrop-filter: blur(5px);">
+          <h3 style="color: #ff4655;">Valorant</h3>
           <ul style="text-align: left; margin-top: 15px;">
             <li>Aim Training & Crosshair Placement</li>
             <li>Agent Abilities & Utility Usage</li>
@@ -317,8 +350,8 @@
     </div>
   </div>
 
-  <!-- Book a Session Slide -->
-  <div class="slide" style="background-color: #1a1a2e;">
+  <!-- Book a Session Slide - Dark themed with game elements -->
+  <div class="slide" style="background-image: url('https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt4f4c1e0c8557cbd1/638f9d4d8e7a652b268e9a8a/111422_Valorant_5.10_Patch_Notes_Banner.jpg'); background-position: center;">
     <div class="overlay"></div>
     <div class="content">
       <h1>Book a Session</h1>
@@ -352,7 +385,7 @@
         </select>
 
         <label>Your Email:</label>
-        <input type="email" name="email" required style="width: 100%; padding: 10px; border-radius: 5px; background-color: #333; color: white; border: none;">
+        <input type="email" name="email" required style="width: 100%; padding: 10px; border-radius: 5px; background-color: rgba(30, 144, 255, 0.2); color: white; border: 1px solid #1e90ff;">
 
         <div id="formStatus"></div>
 
@@ -364,8 +397,8 @@
     </div>
   </div>
 
-  <!-- Thank You Slide -->
-  <div class="slide" style="background-color: #2c3e50;">
+  <!-- Thank You Slide - Victory themed -->
+  <div class="slide" style="background-image: url('https://cdn2.unrealengine.com/fortnite-victory-royale-1920x1080-1920x1080-8e9d6a1d5e1e.jpg'); background-position: center;">
     <div class="overlay"></div>
     <div class="content">
       <h1>Thank You for Booking!</h1>
@@ -375,8 +408,8 @@
     </div>
   </div>
 
-  <!-- Connect With Us Slide -->
-  <div class="slide" style="background-image: url('https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt29d7e7cc9d2a80f6/5eb26f54402b8b4d13a56656/agent-background-generic.jpg')">
+  <!-- Connect With Us Slide - Valorant themed -->
+  <div class="slide" style="background-image: url('https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt4f4d2d5e855a1a5f/65f33f0b8b1a7263b1341b5a/EP7_ACT2_PlayVALORANT_ContentStackThumbnail_1920x1080.jpg'); background-position: center;">
     <div class="overlay"></div>
     <div class="content">
       <h1>Connect With Us</h1>
